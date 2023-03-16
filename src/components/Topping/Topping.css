@@ -6,6 +6,10 @@
     margin-top: 25px;
 }
 
+.apple {
+    transform: rotate(90deg);
+}
+
 .lines {
     width: 400px;
     height: 400px;

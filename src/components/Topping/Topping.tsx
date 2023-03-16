@@ -1,44 +1,37 @@
 import { PropsWithChildren } from 'react';
-import { Flavor } from '../../App';
+import { Flavors } from '../Flavor';
 import './Topping.css';
+
+const LinedCrust = () => (
+    <div className="lines">
+        <div className="line-short"></div>
+        <div className="line-medium"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line-medium"></div>
+        <div className="line-short"></div>
+    </div>
+)
 
 const CherryTopping = () => (
     <div className="cherry">
-        <div className="lines">
-            <div className="line-short"></div>
-            <div className="line-medium"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line-medium"></div>
-            <div className="line-short"></div>
-        </div>
+        <LinedCrust />
     </div>
 )
 
 const AppleTopping = () => (
     <div className="apple">
-        <div className="lines">
-            <div className="line-short"></div>
-            <div className="line-medium"></div> 
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line-medium"></div>
-            <div className="line-short"></div>
-        </div>
+        <LinedCrust />
     </div>
 )
 
 const LemonTopping = () => (
-    <div className="lemon">
-
-    </div>
+    <div className="lemon"></div>
 )
 
-function Topping(props: PropsWithChildren<{ flavor: Flavor }>) {
+function Topping(props: PropsWithChildren<{ flavor: Flavors }>) {
     const getToppings = ()  => {
         switch (props.flavor) {
             case 'Cherry':
