@@ -1,0 +1,7 @@
+.crust {
+    background-color: #f4af71;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    display: inline-block
+}

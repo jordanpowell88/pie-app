@@ -1,0 +1,47 @@
+.cherry, .apple {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.lines {
+    width: 400px;
+    height: 400px;
+    margin: 0;
+    display: inline-block;
+}
+
+.line {
+    background-color: #f4af71;
+    width: 30px;
+    height: 400px;
+    float: left;
+    margin: 0 10px;
+}
+
+.line-short {
+    background-color: #f4af71;
+    width: 30px;
+    height: 250px;
+    float: left;
+    margin: 75px 10px;
+}
+
+.line-medium {
+    background-color: #f4af71;
+    width: 30px;
+    height: 350px;
+    float: left;
+    margin: 10px;
+}
+
+.lemon {
+    background-color: #fff;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 25px;
+}
