@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { Flavor, Flavors, NumberOfPieces, Pie, Pieces, Temperature } from './components';
+import { Calories, Flavor, Flavors, Ingredients, NumberOfPieces, Pie, Pieces, Temperature, Time } from './components';
 
 function App() {
   const [flavor, setFlavor] = useState<Flavors>('Cherry');
@@ -13,6 +13,9 @@ function App() {
       <Flavor setFlavorOnClick={setFlavor} />
       <Temperature setTemperatureOnClick={setHot} />
       <Pieces selectedPiece={pieces} setPieceOnClick={setPieces} />
+      <Ingredients flavor={flavor} />
+      <Time flavor={flavor} hot={hot} />
+      <Calories flavor={flavor} pieces={pieces} />
       <Pie flavor={flavor} />
     </div>
   )
