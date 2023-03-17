@@ -37,7 +37,7 @@ function Piece({ isActive, selectedPiece, setPieceOnClick }: PieceClickHandler) 
 
     return (
         <button className={isActive ? 'active' : ''} onClick={() => setPieceOnClick(selectedPiece)}>
-            <img src={getImage()} alt={selectedPiece + 'Number of Pieces'} width={100} />
+            <img src={getImage()} data-cy={`cutInto${selectedPiece}Pieces`} alt={selectedPiece + 'Number of Pieces'} width={100} />
         </button>
     )
 }

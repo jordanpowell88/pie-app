@@ -1,43 +1,42 @@
-import { useEffect, useState } from 'react';
-import { Flavors } from '../Flavor';
-import './Ingredients.css'
+import { type Flavors } from '../Flavor';
+import './Ingredients.css';
 
-const CrustIngredients = ['flour', 'salt', 'butter', 'oil', 'water'] as const;
-type CrustIngredientList = (typeof CrustIngredients)[number];
+export const CrustIngredientsList = ['flour', 'salt', 'butter', 'oil', 'water'] as const;
+type CrustIngredients = (typeof CrustIngredientsList)[number];
 
-const CherryIngredients = ['cherries', 'sugar', 'lemon juice', 'cornstarch', 'butter', 'cinnamon', 'egg' ] as const;
-type CherryIngredientList = (typeof CherryIngredients)[number] & CrustIngredientList;
+export const CherryIngredientsList = ['cherries', 'sugar', 'lemon juice', 'cornstarch', 'butter', 'cinnamon', 'egg' ] as const;
+type CherryIngredients = (typeof CherryIngredientsList)[number] & CrustIngredients;
 
-const AppleIngredients = ['apples', 'cinnamon', 'cloves', 'nutmeg', 'salt', 'sugar', 'butter', 'flour', 'cornstarch', 'lemon juice', 'egg'] as const
-type AppleIngredientList = (typeof AppleIngredients)[number] & CrustIngredientList
+export const AppleIngredientsList = ['apples', 'cinnamon', 'cloves', 'nutmeg', 'salt', 'sugar', 'butter', 'flour', 'cornstarch', 'lemon juice', 'egg'] as const
+type AppleIngredients = (typeof AppleIngredientsList)[number] & CrustIngredients
 
-const LemonIngredients = ['lemon juice', 'sugar', 'flour', 'cornstarch', 'salt', 'water', 'lemon zest', 'butter', 'egg' ] as const
-type LemonIngredientList = (typeof LemonIngredients)[number] & CrustIngredientList
+export const LemonIngredientsList = ['lemon juice', 'sugar', 'flour', 'cornstarch', 'salt', 'water', 'lemon zest', 'butter', 'egg' ] as const
+type LemonIngredients = (typeof LemonIngredientsList)[number] & CrustIngredients
 
-const PotentialIngredients = [...CherryIngredients, ...AppleIngredients, ...LemonIngredients] as const
-type MasterIngredientList = (typeof PotentialIngredients)[number]
+export const PotentialIngredientsList = [...CherryIngredientsList, ...AppleIngredientsList, ...LemonIngredientsList] as const
+type MasterIngredients = (typeof PotentialIngredientsList)[number]
 
 function Ingredients({ flavor }: { flavor: Flavors }) {
-    const getIngredients = (): Partial<MasterIngredientList[]> => {
+    const getIngredients = (): Partial<MasterIngredients[]> => {
         switch (flavor) {
             case 'Cherry':
-                return [...CherryIngredients]
+                return [...CherryIngredientsList]
 
             case 'Apple':
-                return [...AppleIngredients]
+                return [...AppleIngredientsList]
 
             case 'Lemon':
-                return [...LemonIngredients]
+                return [...LemonIngredientsList]
         
             default:
-                return [...PotentialIngredients]
+                return [...PotentialIngredientsList]
         }
     }
     
     return (
         <>
             <h3>Ingredients Needed</h3>
-            <ul>
+            <ul id="ingredients">
                 {
                     getIngredients().map(ingredient =>
                         <li key={ingredient}>{ingredient}</li>)

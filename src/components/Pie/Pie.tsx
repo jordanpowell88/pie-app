@@ -1,11 +1,11 @@
 import { PropsWithChildren } from "react";
-import { Flavor } from "../../App";
 import { Crust } from "../Crust";
 import { Filling } from "../Filling";
+import { type Flavors } from "../Flavor";
 import { Topping } from "../Topping";
 import './Pie.css';
 
-function Pie(props: PropsWithChildren<{ flavor: Flavor}>) {
+function Pie(props: PropsWithChildren<{ flavor: Flavors }>) {
     const { flavor } = props;
    return (
     <>

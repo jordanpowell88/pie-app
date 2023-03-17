@@ -1,5 +1,5 @@
-import { Flavors } from "../Flavor";
-import { NumberOfPieces } from "../Pieces";
+import { type Flavors } from "../Flavor";
+import { type NumberOfPieces } from "../Pieces";
 import './Calories.css';
 
 function Calories({ flavor, pieces }: { flavor: Flavors, pieces: NumberOfPieces }) {
@@ -20,7 +20,7 @@ function Calories({ flavor, pieces }: { flavor: Flavors, pieces: NumberOfPieces 
     return (
         <>
         <h3>Calories</h3>
-        <p>{calculateCalories()}</p>
+        <p data-cy="totalCalories">{calculateCalories()}</p>
         </>
     )
 }

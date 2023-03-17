@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { Flavors } from '../Flavor';
+import { type Flavors } from '../Flavor';
 import './Topping.css';
 
 const LinedCrust = () => (
@@ -15,41 +15,15 @@ const LinedCrust = () => (
     </div>
 )
 
-const CherryTopping = () => (
-    <div className="cherry">
-        <LinedCrust />
-    </div>
-)
-
-const AppleTopping = () => (
-    <div className="apple">
-        <LinedCrust />
-    </div>
-)
-
-const LemonTopping = () => (
-    <div className="lemon"></div>
-)
-
 function Topping(props: PropsWithChildren<{ flavor: Flavors }>) {
-    const getToppings = ()  => {
-        switch (props.flavor) {
-            case 'Cherry':
-                return <CherryTopping />
-            
-            case 'Apple':
-                return <AppleTopping />
-
-            case 'Lemon':
-                return <LemonTopping />
-        
-            default:
-               return <></>
-        }
-    }
-
+    const { flavor } = props;
+    
     return (
-        getToppings()
+        <div className={flavor.toLowerCase()}>
+            {
+                flavor !== 'Lemon' && <LinedCrust />
+            }
+        </div>
     )
 }
 

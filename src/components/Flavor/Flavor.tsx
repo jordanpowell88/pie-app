@@ -10,13 +10,13 @@ function Flavor({ setFlavorOnClick }: FlavorClickHandler) {
     return (
         <>
         <h3>Select A Flavor</h3>
-        <button onClick={() => setFlavorOnClick('Cherry')}>
+        <button data-cy="cherryButton" onClick={() => setFlavorOnClick('Cherry')}>
         <img src={cherry} alt="Cherry" width={150} />
         </button>
-        <button onClick={() => setFlavorOnClick('Apple')}>
+        <button data-cy="appleButton" onClick={() => setFlavorOnClick('Apple')}>
             <img src={apple} alt="Apple" width={150} />
         </button>
-        <button onClick={() => setFlavorOnClick('Lemon')}>
+        <button data-cy="lemonButton" onClick={() => setFlavorOnClick('Lemon')}>
             <img src={lemon} alt="Lemon" width={150} />
         </button>
       </>

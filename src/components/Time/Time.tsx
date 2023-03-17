@@ -1,10 +1,11 @@
-import { Flavors } from "../Flavor";
+import { type Flavors } from "../Flavor";
 import './Time.css';
 
 function Time({ flavor, hot }: { flavor: Flavors, hot: boolean}) {
-    const calculateTime = (): number | undefined => {
+    const calculateTime = (): number => {
         let cookTime: number = 0;
         let prepTime: number = 0;
+        let coolTime: number = hot ? 15 : 120
 
         if (flavor === 'Cherry') {
             prepTime = 20;
@@ -21,7 +22,7 @@ function Time({ flavor, hot }: { flavor: Flavors, hot: boolean}) {
             cookTime = 25;
         }
 
-        return prepTime + cookTime + (hot ? 15 : 120)
+        return prepTime + cookTime + coolTime
     }
 
     return (
