@@ -28,7 +28,7 @@ function Time({ flavor, hot }: { flavor: Flavors, hot: boolean}) {
     return (
         <>
             <h3>Total Time</h3>
-            <p>{calculateTime()}</p>
+            <p data-cy="totalTime">{calculateTime()}</p>
         </>
     )
 }
